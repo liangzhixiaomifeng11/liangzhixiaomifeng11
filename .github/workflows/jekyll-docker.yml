@@ -1,0 +1,20 @@
+姓名：名称：Jekyll 站点 CI
+
+
+
+    分支: [    修订：[ “主要” ] “主要”   ]
+  拉请求：
+    分支: [    分支：[ “主要” ] “主要”   ]
+
+工作：
+  建造者：
+
+    running-on   :     运行：ubuntu-latest
+
+    脚步：
+    -使用:         - 使用：actions/checkout@v4
+    - name     :           - name :在 jekyll/builder Container 中构建站点
+      运行：|
+        码头工人运动\
+        -v$ {     { github.workspace }    } :/srv/jekyll -v $ {   { github.workspace }  } /_site:/srv/jekyll/_site \
+        jekyll/builder：最新/bin/bash -c“chmod -R 777 /srv/jekyll && jekyll build --future”
